@@ -202,18 +202,18 @@
       </div>
       <div class="class-card">
         <div class="fid">FL003</div>
-        <h3>Success without effect</h3>
-        <p>The run reports success while the work never landed downstream. The log is green, the system of record never changed — and nobody checks the system of record.</p>
+        <h3>Stale state</h3>
+        <p>The run worked from a context snapshot older than you allow — or the state it planned from and the state it carried disagree on version. Confident work, expired world.</p>
       </div>
       <div class="class-card">
         <div class="fid">FL004</div>
-        <h3>State lost at handover</h3>
-        <p>Context lives in a conversation instead of durable state. The next step rebuilds its understanding from a summary of a summary — and acts on it with full confidence.</p>
+        <h3>Count mismatch</h3>
+        <p>The headline number disagrees with the itemized record underneath it — reported 12 delivered, the list holds 9. Only the list was ever true.</p>
       </div>
       <div class="class-card">
         <div class="fid">FL005</div>
-        <h3>Evals that pass by construction</h3>
-        <p>Checks designed so they cannot fail. The dashboard stays green over broken behavior because the evaluation was built to confirm, not to catch.</p>
+        <h3>Missing components</h3>
+        <p>Required parts are present but empty, a segment occupies its slot and contains nothing, and the deliverable goes silent where content should be.</p>
       </div>
       <div class="class-card">
         <div class="fid">THE VERDICT</div>
@@ -222,18 +222,22 @@
       </div>
     </div>
 
-    <div class="terminal" role="img" aria-label="Example FailLoud CLI output showing two errors and a FAIL verdict">
+    <div class="terminal" role="img" aria-label="Real FailLoud demo output: the failing example produces 8 errors and a FAIL verdict">
       <div class="tbar"><i></i><i></i><i></i><span>terminal — failloud check</span></div>
-      <pre><span class="cmd">$ failloud check agent-output.json</span>
+      <pre><span class="cmd">$ failloud check examples/failing_output.json</span>
 
 FL001  placeholder_shipped   <span class="err">ERROR</span>    $.output.body
-       Declared done, but the payload still contains template scaffolding.
-FL002  unbacked_claim        <span class="err">ERROR</span>    $.claims[0]
-       Claims "published" with no URL, receipt, or artifact attached.
-FL004  state_lost            <span class="warn">WARNING</span>  $.handover
-       Handover references chat context instead of a durable state object.
+       Placeholder content shipped as final: 'coming soon', 'lorem ipsum', '{{ }}'.
+FL002  unbacked_claim        <span class="err">ERROR</span>    $.claims[1]
+       'card_published' claimed — no id, URL, receipt, or artifact backs it.
+FL003  stale_state           <span class="err">ERROR</span>    $.state.context_updated_at
+       State is 77.1h old (limit 24h); planned from v9, carried v7.
+FL004  count_mismatch        <span class="err">ERROR</span>    $.counts.delivered
+       Reported as 12 — the itemized record contains 9.
+FL005  missing_components    <span class="err">ERROR</span>    $.segments[2]
+       Zero-length segment, and a 5.5s dead stretch where content should be.
 
-<span class="verdict">VERDICT: FAIL — 2 errors, 1 warning. Do not ship downstream.</span></pre>
+<span class="verdict">VERDICT: FAIL — 8 errors, 1 warning. The corrected output passes clean.</span></pre>
     </div>
 
     <p class="origin"><strong>Built from real production failures.</strong> Every check in FailLoud exists because a real system failed that way in production — and the failure was only visible to whoever finally read the output itself. The failures became rules; the rules became this tool.</p>
@@ -243,7 +247,7 @@ FL004  state_lost            <span class="warn">WARNING</span>  $.handover
     </div>
 
     <div class="fl-actions">
-      <a class="btn primary" href="#" aria-label="FailLoud on GitHub (link pending publication)">View on GitHub</a>
+      <a class="btn primary" href="https://github.com/Yalakala-Naveen/failloud" aria-label="FailLoud on GitHub">View on GitHub</a>
       <a class="btn" href="resume.pdf" download>Download résumé (PDF)</a>
     </div>
   </div>
