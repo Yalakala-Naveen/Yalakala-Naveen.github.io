@@ -185,9 +185,9 @@
     <div class="kicker">Open Source · Case Study</div>
     <div class="fl-head">
       <h2>FailLoud</h2>
-      <span class="fl-badge">v0.3.0 · MIT</span>
+      <span class="fl-badge">v0.4.0 · MIT</span>
     </div>
-    <p class="lede">A <strong>verification harness for LLM agent outputs</strong> — it catches the silent failures agents ship as &ldquo;done.&rdquo; Run it as a CLI in a pipeline, or as an <strong>MCP server</strong> your agents call before they are allowed to claim success. The core is standard-library-only Python: a verification tool should add no supply-chain surface of its own. And since v0.2.0, every verdict can be sealed into a <strong>hash-chained receipt</strong> — so what carries a result downstream is an audit trail anyone can re-verify, not the agent&rsquo;s word. New in v0.3.0: <strong>watch mode</strong> polls a pipeline&rsquo;s output file or directory and re-verifies each output the moment its content changes, sealing every verdict to the chain automatically.</p>
+    <p class="lede">A <strong>verification harness for LLM agent outputs</strong> — it catches the silent failures agents ship as &ldquo;done.&rdquo; Run it as a CLI in a pipeline, or as an <strong>MCP server</strong> your agents call before they are allowed to claim success. The core is standard-library-only Python: a verification tool should add no supply-chain surface of its own. And since v0.2.0, every verdict can be sealed into a <strong>hash-chained receipt</strong> — so what carries a result downstream is an audit trail anyone can re-verify, not the agent&rsquo;s word. New in v0.3.0: <strong>watch mode</strong> polls a pipeline&rsquo;s output file or directory and re-verifies each output the moment its content changes, sealing every verdict to the chain automatically. New in v0.4.0: a <strong>LangChain adapter</strong> verifies outputs in the loop — a callback handler checks each LLM and chain result as it finishes, before the next step builds on it.</p>
 
     <div class="classes">
       <div class="class-card">
@@ -243,7 +243,7 @@ FL005  missing_components    <span class="err">ERROR</span>    $.segments[2]
     <p class="origin"><strong>Built from real production failures.</strong> Every check in FailLoud exists because a real system failed that way in production — and the failure was only visible to whoever finally read the output itself. The failures became rules; the rules became this tool.</p>
 
     <div class="fl-facts">
-      <span>Python ≥ 3.10</span><span>CLI: failloud</span><span>MCP server: failloud-mcp</span><span>Hash-chained receipts</span><span>Watch mode</span><span>Zero core dependencies</span><span>License: MIT</span>
+      <span>Python ≥ 3.10</span><span>CLI: failloud</span><span>MCP server: failloud-mcp</span><span>Hash-chained receipts</span><span>Watch mode</span><span>LangChain adapter</span><span>Zero core dependencies</span><span>License: MIT</span>
     </div>
 
     <div class="fl-actions">
