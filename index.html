@@ -260,13 +260,18 @@ FL005  missing_components    <span class="err">ERROR</span>    $.segments[2]
     <h2>Shipped this month</h2>
     <div class="timeline">
       <div class="job">
+        <h3>RecallLint — lint your agent's memory before it lies to your agent</h3>
+        <p>Coding agents keep persistent memory files (CLAUDE.md, AGENTS.md, MEMORY.md) and treat them as ground truth — but nothing checks them, so a memory learned three weeks ago can be confidently wrong after a refactor, and every agent sharing it inherits the mistake. RecallLint audits those files against the repo as it is today: dead paths, dead symbols, stale sources (per git history), unsourced claims, duplicates — with a report, --json output, and CI exit codes. Deterministic; no model in the verdict path. 35 tests, MIT. Launched on Product Hunt Nov 20, 2026; PyPI release pending — install from the GitHub release today.</p>
+        <p><a href="https://yalakala-naveen.github.io/recalllint/">Try the playground</a> · <a href="https://github.com/Yalakala-Naveen/recalllint">GitHub</a> · <a href="https://www.producthunt.com/products/recalllint?launch=recalllint">Product Hunt</a></p>
+      </div>
+      <div class="job">
         <h3>RxGuard — fraud detection with no labels</h3>
         <p>Prescription fraud has no labels to train on: confirmed cases are rare and slow. RxGuard detects pill mills, doctor-shopping rings, and forged-prescription bursts unsupervised — an Isolation Forest + PCA detector over prescriber behaviour, plus a graph detector over the prescriber–patient–pharmacy network — on a synthetic dataset modeled on public CMS Part D patterns. The detectors never see the injected ground truth; scored against it, the combined ranking puts every injected archetype in the top 20 of 300 prescribers (recall@20 1.00, doctor-shoppers 12/12), and the weak spot is printed too: feature-only precision@10 is 0.30. 16 tests, MIT.</p>
         <p><a href="https://yalakala-naveen.github.io/rxguard/">Try the live demo</a> · <a href="https://github.com/Yalakala-Naveen/rxguard">GitHub</a></p>
       </div>
       <div class="job">
         <h3>ScrubZero — zero-dependency PII redaction (PyPI Mon Nov 23)</h3>
-        <p>Logs, prompts, and tickets are full of emails, card numbers, and API keys that should never sit in plain text. The thorough redactor (Presidio) is a spaCy framework; the lightweight one (scrubadub) has had no code push since Sep 2023 — against ≈8.7M downloads/month of counted demand. ScrubZero is the lightweight seat rebuilt: pure standard library, and checksum-validated before anything is masked (Luhn for cards, mod-97 for IBANs), so a 16-digit order id survives and a real card doesn't. 32 tests, MIT.</p>
+        <p>Logs, prompts, and tickets are full of emails, card numbers, and API keys that should never sit in plain text. The thorough redactor (Presidio) is a spaCy framework; the lightweight one (scrubadub) has had no code push since Sep 2023 — against ≈8.8M downloads/month of counted demand. ScrubZero is the lightweight seat rebuilt: pure standard library, and checksum-validated before anything is masked (Luhn for cards, mod-97 for IBANs), so a 16-digit order id survives and a real card doesn't. 32 tests, MIT.</p>
         <p><a href="https://yalakala-naveen.github.io/scrubzero/">Try the playground</a> · <a href="https://github.com/Yalakala-Naveen/scrubzero">GitHub</a></p>
       </div>
     </div>
