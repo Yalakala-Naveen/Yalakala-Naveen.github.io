@@ -271,7 +271,7 @@ FL005  missing_components    <span class="err">ERROR</span>    $.segments[2]
       </div>
       <div class="job">
         <h3>ScrubZero — zero-dependency PII redaction</h3>
-        <p>Logs, prompts, and tickets are full of emails, card numbers, and API keys that should never sit in plain text. The thorough redactor (Presidio) is a spaCy framework; the lightweight one (scrubadub) has had no code push since Sep 2023 — against ≈8.8M downloads/month of counted demand. ScrubZero is the lightweight seat rebuilt: pure standard library, and checksum-validated before anything is masked (Luhn for cards, mod-97 for IBANs), so a 16-digit order id survives and a real card doesn't. 32 tests, MIT.</p>
+        <p>Logs, prompts, and tickets are full of emails, card numbers, and API keys that should never sit in plain text. The thorough redactor (Presidio) is a spaCy framework; the lightweight one (scrubadub) has had no code push since Sep 2023 — against ≈8.6M downloads/month of counted demand. ScrubZero is the lightweight seat rebuilt: pure standard library, and checksum-validated before anything is masked (Luhn for cards, mod-97 for IBANs), so a 16-digit order id survives and a real card doesn't. v0.2.0 adds the credential shapes people paste into AI tools — password assignments, database connection-string passwords, Bearer tokens, private keys — prose-guarded so documentation survives. 48 tests, MIT. PyPI launch held (no launch without a named buyer); install from GitHub.</p>
         <p><a href="https://yalakala-naveen.github.io/scrubzero/">Try the playground</a> · <a href="https://github.com/Yalakala-Naveen/scrubzero">GitHub</a></p>
       </div>
     </div>
