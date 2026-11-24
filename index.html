@@ -274,6 +274,11 @@ FL005  missing_components    <span class="err">ERROR</span>    $.segments[2]
         <p>Logs, prompts, and tickets are full of emails, card numbers, and API keys that should never sit in plain text. The thorough redactor (Presidio) is a spaCy framework; the lightweight one (scrubadub) has had no code push since Sep 2023 — against ≈8.6M downloads/month of counted demand. ScrubZero is the lightweight seat rebuilt: pure standard library, and checksum-validated before anything is masked (Luhn for cards, mod-97 for IBANs), so a 16-digit order id survives and a real card doesn't. v0.2.0 adds the credential shapes people paste into AI tools — password assignments, database connection-string passwords, Bearer tokens, private keys — prose-guarded so documentation survives. 48 tests, MIT. PyPI launch held (no launch without a named buyer); install from GitHub.</p>
         <p><a href="https://yalakala-naveen.github.io/scrubzero/">Try the playground</a> · <a href="https://github.com/Yalakala-Naveen/scrubzero">GitHub</a></p>
       </div>
+      <div class="job">
+        <h3>pyrecalc — evaluate Excel formulas in Python, without Excel</h3>
+        <p>openpyxl writes formulas but never evaluates them, so every workbook a pipeline generates has values nobody has checked until a human opens it in Excel — and stale cached values make it silently wrong. The existing pure-Python evaluators are fragmented (≈5.3M downloads/month across them, pypistats Nov 2026): one is EUPL copyleft, one GPL, one inactive for over a year. pyrecalc is the MIT, verification-first evaluator: it computes formula cells in-process, lets you override inputs and recalculate, and verifies a generated workbook by comparing every computed value against the value saved in the file. 35 functions including SUMIF/COUNTIF/AVERAGEIF and SUMPRODUCT; Excel errors propagate as values and circular references are reported, never a hang. 14 tests, MIT. In build — PyPI launch Mon Nov 30, 2026.</p>
+        <p><a href="https://github.com/Yalakala-Naveen/pyrecalc">GitHub</a></p>
+      </div>
     </div>
   </div>
 </section>
